@@ -14,8 +14,8 @@
 
 # Output directors to store intermediate compiled files
 # relative to the project directory
-BUILD_BASE	= build
-FW_BASE		= firmware
+BUILD_BASE	?= build
+FW_BASE		?= firmware
 
 # base directory for the compiler
 XTENSA_TOOLS_ROOT ?= ../esp-open-sdk/xtensa-lx106-elf/bin
@@ -24,7 +24,7 @@ XTENSA_TOOLS_ROOT ?= ../esp-open-sdk/xtensa-lx106-elf/bin
 SDK_BASE	?= ../esp-open-sdk/sdk
 
 # esptool.py path and port
-ESPTOOL		?= esptool.py
+ESPTOOL		?= PATH=$(PATH):$(XTENSA_TOOLS_ROOT) esptool.py
 ESPPORT		?= /dev/ttyUSB0
 
 # name for the target project
